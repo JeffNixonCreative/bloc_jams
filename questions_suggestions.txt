@@ -1,0 +1,37 @@
+QUESTIONS
+
+In checkpoint 2 we create a repo called git_checkpoint within the bloc directory. BUT, in checkpoint 3 we are instructed to create a remote repo labeled the same as the repo we created in checkpoint 2 called bloc_git_checkpoint. The two are inconsistent naming conventions, so is the “bloc” portion of the remote repo referencing the bloc directory on my local drive and the rest of the remote repo name referencing the local repo?
+
+Also, the workflow of checkpoint 3 is inconsistent with the recommended workflow in the Workflow document where as by the time we have arrived at checkpoint 3 we have already created the local repo and we are mirroring it by creating the remote repo. BUT in Workflow, we are creating the remote repo first and cloning it locally. Workflow seems to make a lot more sense to me. 
+
+Do I create one remote repo and associate all my assignments as branches to the one repo, or do I create repo for each assignment?
+
+When a branch shows up as not being tracked, is there anyway to track it, or are branches not trackable?
+
+SUGGESTION
+
+1) I was confused when transitioning from checkpoint 2, after creating a directory named “checkpoint_exercise” with a file named bloc_l_checkpoint.txt, to checkpoint 3 where I created a subdirectory of bloc named “git_checkpoint” which became a repository after the init command but it is still being referred to as a directory. I would suggest changing the labels to reflect “directory_exercise” in checkpoint 2 to reinforce that it is a directory, and NOT a repo, and “repo_exercise” to reinforce that the student is creating a repo, rather than a dir.
+
+checkpoint_exercise becomes directory_exercise
+
+git_checkpoint becomes repo_exercise
+
+I feel as though this would be a more contextual naming convention, keeping the student within the context of what they’re doing and provides clearer delineation between checkpoints, rather than a generic naming convention such as “checkpoint”. You could even take it another couple steps further in doing something like this:
+
+shoppingcart_directory
+pantry_repo
+fruits_branch
+cannedfood_branch
+seasoning_branch
+
+and have file names something like:
+
+apple.txt
+spaghettios.txt
+oregino.txt
+
+2) Also, if they followed the same flow as the Workflow document it would reinforce best practices. Meaning, create a remote repo and clone it in checkpoint 2 rather than creating a directory in 2, initializing a subdirectory in 3 (bloc/git_checkpoint and git_checkpoint_assignement branch), creating a remote repository through GitHub in 4  and trying to sync a pre-existing directory (git_checkpoint) to it. I understand there are two ways of syncing the local and remotes repo’s but maybe introducing the Workflow way first, establishing that “This is one of the two ways you can sync your local and remote repo. Click here (provide a link) for the other way. For now, this is the workflow you will be following throughout the duration of the course. Since the Workflow document was introduced later in the course, rather than at the beginning, I saw it as more of a reference or FYI, when its actually way we should be doing things?
+
+3) In checkpoint 2 we create an apple.txt file and a banana.txt file. BUT in Git Remove section we are asked to remove a rotten_apple.txt file which, once re command is executed, I get a message saying that the file does not exist. Now is that file name we are removing supposed to be banana.txt, or am I missing something?
+
+4) Should definitely add “master” at the end of EVERY     git commit -m “name” master     .  This is not highlighted in the course and, since it creates a huge issue, it should be in every example throughout the course. It hasn’t been in one so far.
