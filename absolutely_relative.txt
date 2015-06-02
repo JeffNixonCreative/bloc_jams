@@ -1,0 +1,3 @@
+Elements with Relative positioning are like magnets and the coordinates are their polarity. Once the polarity is gone, the magnet simply stacks.
+
+Absolute elements are the Elastoman of html elements and the values are what contains him. They can base their shape on set values, or stretch to the edge of what contains it (html body or parent element).
