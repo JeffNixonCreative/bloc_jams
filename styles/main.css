@@ -18,7 +18,9 @@ body {
 body.landing {
     background-color: rgb(58,23,63);
 }
- 
+
+/* ||||    NAV BAR    |||| */
+
 .navbar {
     positon: relative;
     padding: 0.5rem;
@@ -42,12 +44,23 @@ body.landing {
      text-decoration: none;
  }
  
+<<<<<<< HEAD
 .links-container .navbar-link {
+=======
+
+/* ||||    LINK: collection    |||| */
+
+ .links-container .navbar-link {
+>>>>>>> 519624aeaecc61d9a746658b0a3c0f7dada0ce3c
      display: table-cell;
      position: relative;
      height: 100%;
      padding-left: 1rem;
+<<<<<<< HEAD
      padding-right: 1rem;
+=======
+     padding-right: 1rem; 
+>>>>>>> 519624aeaecc61d9a746658b0a3c0f7dada0ce3c
      vertical-align: middle;
      color: white;
      font-size: 0.625rem;
@@ -56,8 +69,14 @@ body.landing {
      text-transform: uppercase;
      text-decoration: none;
      cursor: pointer;
+<<<<<<< HEAD
 }
 
+=======
+ }
+ 
+/* ||||    HOVER: collection    |||| */
+>>>>>>> 519624aeaecc61d9a746658b0a3c0f7dada0ce3c
 .links-container .navbar-link:hover {
    color: rgb(233,50,117);
 }
@@ -67,7 +86,16 @@ body.landing {
    background-color: white;
 }
 
+<<<<<<< HEAD
 .container {
+=======
+.links-container:active {
+    color:white;
+    background-color: white;
+}
+
+ .container {
+>>>>>>> 519624aeaecc61d9a746658b0a3c0f7dada0ce3c
      margin: 0 auto;
      max-width: 64rem;
 }
