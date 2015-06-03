@@ -18,17 +18,13 @@ body {
 body.landing {
     background-color: rgb(58,23,63);
 }
- 
+
+/* ||||    NAV BAR    |||| */
+
 .navbar {
     positon: relative;
     padding: 0.5rem;
-
-    /* #1 */
-
     background-color: rgba(101,18,95,0.5);
-
-    /* #2 */
-
     z-index: 1;
 }
  
@@ -48,31 +44,34 @@ body.landing {
      text-decoration: none;
  }
  
+
+/* ||||    LINK: collection    |||| */
+
  .links-container .navbar-link {
      display: table-cell;
      position: relative;
      height: 100%;
      padding-left: 1rem;
-     padding-right: 1rem;
-     
-     /* #4 */
-     
+     padding-right: 1rem; 
      vertical-align: middle;
      color: white;
      font-size: 0.625rem;
      letter-spacing: 0.05rem;
      font-weight: 700;
      text-transform: uppercase;
-     /* #3 */
      text-decoration: none;
      cursor: pointer;
  }
  
-   /* #5 */
-
+/* ||||    HOVER: collection    |||| */
 .links-container .navbar-link:hover {
      color: rgb(233,50,117);
  }
+
+.links-container:active {
+    color:white;
+    background-color: white;
+}
 
  .container {
      margin: 0 auto;
