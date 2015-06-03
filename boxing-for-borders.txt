@@ -1,1 +1,0 @@
-Content-box is a browsers default that allows and elements box model to resize. Border-box allows an element to retain its size, and position, when padding is applied to it or it’s parent.
