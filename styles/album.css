@@ -1,8 +1,9 @@
 body.album {
     background-image: url(../assets/images/blurred_backgrounds/blur_bg_3.jpg);
-    background-repeat: repeat-y;
+    background-repeat: repeat-y; 
     background-position: center center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .album-cover-art {
@@ -12,74 +13,120 @@ body.album {
     width: 60%;
 }
 
+/* //// DETAILS CONTAINER //// */
+
 .album-view-details {
     position: relative;
     top: 1.5rem;
     padding: 1rem;
 }
 
+/*  titile  */
 .album-view-details .album-view-title {
     font-weight: 300;
     font-size: 2rem;
 }
 
+/*  artist  */
 .album-view-details .album-view-artist {
     font-weight: 300;
     font-size: 1.5rem;
 }
 
+/*  info  */
 .album-view-details .album-view-release-info {
     font-weight: 300;
     font-size: 0.75rem;
 }
 
-.album-view-details .album-view-release-info {
-    font-weight: 300;
-    font-size: 0.75rem;
-}
+
+/*  ////  TABLE  ////  */
 
 .album-view-song-list {
     width: 90%;
     margin: 1.5rem auto;
     font-weight: 300;
     font-size: 0.75em;
+    /* border-bottom: 1px solid white; */
 }
- 
+
+/*  table head  */
+.table-head {
+    height: 2rem;
+
+    letter-spacing: .5px;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(48, 8, 65, 0.5);
+    /* border-bottom: 1px solid white; */
+}
+table thead {
+    background-color: rgba(255,255,255,0.15);
+}
+table thead tr td {
+    padding-left: 10px;
+}
+
+
+/*  table rows  */
+table tr {
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+
+
+/*  ||  TABLE DATA  ||  */
+
+
+/*  table item/data  */
 .album-view-song-item {
     height: 3rem;
-    /* #1 */
-    border-bottom: 1px solid rgba(255,255,255,0.5);
+    /* border-bottom: 1px solid rgba (255,255,255,0.5); */
+
 }
 
+/*  number  */
 .song-item-number {
     width: 5%;
+    padding-left: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
+/*  title  */
 .song-item-title {
-    width: 85%;
+    width: 65%;
+    padding-left: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
- .song-item-duration {
-    width: 5%;
-}
-
+/*  duration  */
 .song-item-duration {
-     width: 5%;
+    letter-spacing: 3px;
+    width: 10%;
+    padding-left: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
-/* #2 */
+/*  plays  */
+.song-item-plays {
+    letter-spacing: 1px;
+    width: 10%;
+    padding-left: 5px;
+    color: rgba(217,217,217,0.5);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+
 @media (max-width: 40rem) and (min-width: 20rem) {
 
     .album-view-details {
-        text-align: center
+        text-align: center;
     }
      
      .album-view-title {
          margin-top: 0;
      }
 }
-
-/* #3 */
 
 @media (max-width: 64rem) and (min-width: 20rem) {
     .album-view-song-list {

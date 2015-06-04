@@ -1,99 +1,139 @@
+
 <!DOCTYPE html>
- <html>
-     <head>
-         <title>Bloc Jams</title>
-         <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
-         <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-         <link rel="stylesheet" type="text/css" href="styles/normalize.css">
-         <link rel="stylesheet" type="text/css" href="styles/main.css">
-         <link rel="stylesheet" type="text/css" href="styles/album.css">
+ <html data-brackets-id='31'>
+     <head data-brackets-id='32'>
+         <title data-brackets-id='33'>Bloc Jams</title>
+         <meta data-brackets-id='34' name="viewport" content="width=device-width, initial-scale=1">
+         <link data-brackets-id='35' rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
+         <link data-brackets-id='36' rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+         <link data-brackets-id='37' rel="stylesheet" type="text/css" href="styles/normalize.css">
+         <link data-brackets-id='38' rel="stylesheet" type="text/css" href="styles/main.css">
+         <link data-brackets-id='39' rel="stylesheet" type="text/css" href="styles/album.css">
      </head>
 
-<!-- ///// ALBUM //// -->
+<!-- ///// BODY CONTAINER //// -->
      
-     <body class="album">
+     <body data-brackets-id='40' class="album">
 
-         <!-- | Nav Bar | -->  
+    <!-- /// NAV BAR /// -->  
 
-         <nav class="navbar">
-             <a href="index.html"  class="logo">
-                 <img src="assets/images/bloc_jams_logo.png" alt="bloc jams logo">
-             </a>
+         <nav data-brackets-id='41' class="navbar">
+
+         <!-- |   Logo   | -->             
              
-             <!-- *** nav links *** -->
+             <a data-brackets-id='42' href="index.html"  class="logo">
+                 <img data-brackets-id='43' src="assets/images/bloc_jams_logo.png" alt="bloc jams logo">
+             </a>
 
-             <div class="links-container">
-                 <a href="collection.html" class="navbar-link">collection</a>
+         <!-- |   Links   ||| -->             
+             
+             <div data-brackets-id='44' class="links-container">
+                 <a data-brackets-id='45' href="collection.html" class="navbar-link">collection</a>
              </div>
          </nav>
          
-         <!-- | Album View | -->
+    <!-- ///   IMAGE AND DESCRIPTION   /// -->
 
-         <main class="album-view container narrow">
-             <section class="clearfix">
-                 <div class="column half">
+         <main data-brackets-id='46' class="album-view container narrow">
+             <section data-brackets-id='47' class="clearfix">
+                 <div data-brackets-id='48' class="column half">
 
-                    <!-- *** image *** -->
+            <!-- *** image *** -->
 
-                     <img src="assets/images/album_covers/01.png" class="album-cover-art">
+                     <img data-brackets-id='49' src="assets/images/album_covers/01.png" class="album-cover-art">
                  </div>
 
-                    <!-- *** description/details *** -->
+            <!-- *** description *** -->
                  
-                 <div class="album-view-details column half">
-                    <h2 class="album-view-title">The Colors</h2>
-                    <h3 class="album-view-artist">Pablo Picasso</h3>
-                    <h5 class="album-view-release-info">1909 Spanish Records</h5>
+                 <div data-brackets-id='50' class="album-view-details column half">
+                    <h2 data-brackets-id='51' class="album-view-title">The Colors</h2>
+                    <h3 data-brackets-id='52' class="album-view-artist">Pablo Picasso</h3>
+                    <h5 data-brackets-id='53' class="album-view-release-info">1909 Spanish Records</h5>
                  </div>
              </section>
 
-             <!-- ||| Song List ||| -->
+    <!-- ////   TABLE   //// -->
              
-             <table class="album-view-song-list">
+             <table data-brackets-id='54' class="album-view-song-list">
+
+             <!-- *** table head *** -->
                  
-                <!-- *** song-item 1 *** -->
-             
-                 <tr class="album-view-song-item">
-                     <td class="song-item-number">1</td>
-                     <td class="song-item-title">Blue</td>
-                     <td class="song-item-duration">X:XX</td>
-                 </tr>
+                <thead>
+                    <tr class="table-head">
+                        <td>#</td>
+                        <td>TITLE</td>
+                        <td>DURATION </td>
+                        <td>PLAYS</td>
+                    </tr>
+                </thead>
+
+             <!-- *** song-item 1 *** -->
+
+                <tr data-brackets-id='55' class="album-view-song-item">
+                     <td data-brackets-id='56' class="song-item-number">1</td>
+                     <td data-brackets-id='57' class="song-item-title">Blue</td>
+                     <td data-brackets-id='58' class="song-item-duration">X:XX</td>
+                     <td data-brackets-id='59' class="song-item-plays"> </td>                    
+                </tr>
                                   
                 <!-- *** song-item 2 *** -->
              
-                 <tr class="album-view-song-item">
-                     <td class="song-item-number">2</td>
-                     <td class="song-item-title">Red</td>
-                     <td class="song-item-duration">X:XX</td>
+                 <tr data-brackets-id='60' class="album-view-song-item">
+                     <td data-brackets-id='61' class="song-item-number">2</td>
+                     <td data-brackets-id='62' class="song-item-title">Red</td>
+                     <td data-brackets-id='63' class="song-item-duration">X:XX</td>
+                     <td data-brackets-id='64' class="song-item-plays"> </td>                     
+                     
                  </tr>
                                   
                 <!-- *** song-item 3 *** -->
              
-                 <tr class="album-view-song-item">
-                     <td class="song-item-number">3</td>
-                     <td class="song-item-title">Green</td>
-                     <td class="song-item-duration">X:XX</td>
+                 <tr data-brackets-id='65' class="album-view-song-item">
+                     <td data-brackets-id='66' class="song-item-number">3</td>
+                     <td data-brackets-id='67' class="song-item-title">Green</td>
+                     <td data-brackets-id='68' class="song-item-duration">X:XX</td>
+                     <td data-brackets-id='69' class="song-item-plays"> </td>                 
+                 
                  </tr>
                                   
                 <!-- *** song-item 4 *** -->
              
-                 <tr class="album-view-song-item">
-                     <td class="song-item-number">4</td>
-                     <td class="song-item-title">Purple</td>
-                     <td class="song-item-duration">X:XX</td>
+                 <tr data-brackets-id='70' class="album-view-song-item">
+                     <td data-brackets-id='71' class="song-item-number">4</td>
+                     <td data-brackets-id='72' class="song-item-title">Purple</td>
+                     <td data-brackets-id='73' class="song-item-duration">X:XX</td>
+                     <td data-brackets-id='74' class="song-item-plays"> </td>                 
+                 
                  </tr>
                                   
                 <!-- *** song-item 5 *** -->
              
-                 <tr class="album-view-song-item">
-                     <td class="song-item-number">5</td>
-                     <td class="song-item-title">Black</td>
-                     <td class="song-item-duration">X:XX</td>
+                 <tr data-brackets-id='75' class="album-view-song-item">
+                     <td data-brackets-id='76' class="song-item-number">5</td>
+                     <td data-brackets-id='77' class="song-item-title">Black</td>
+                     <td data-brackets-id='78' class="song-item-duration">X:XX</td>
+                     <td data-brackets-id='79' class="song-item-plays"> </td>
                  </tr>
+                                                   
+                <!-- *** song-item 6 *** -->
+             
+                 <tr data-brackets-id='80' class="album-view-song-item">
+                     <td data-brackets-id='81' class="song-item-number">6</td>
+                     <td data-brackets-id='82' class="song-item-title">Gray</td>
+                     <td data-brackets-id='83' class="song-item-duration">X:XX</td>
+                     <td data-brackets-id='84' class="song-item-plays">12,345,678</td>
+                 </tr>
+                                  
+                <!-- *** song-item 7 *** -->
+             
+                 <tr data-brackets-id='85' class="album-view-song-item">
+                     <td data-brackets-id='86' class="song-item-number">7</td>
+                     <td data-brackets-id='87' class="song-item-title">White</td>
+                     <td data-brackets-id='88' class="song-item-duration">X:XX</td>
+                     <td data-brackets-id='89' class="song-item-plays">12,345,678</td>
+                 </tr>
+                 
              </table>
          </main>
-     </body>
- </html>
      </body>
  </html>
