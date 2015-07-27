@@ -1,7 +1,7 @@
  body.collection {
      background-image: url(../assets/images/blurred_backgrounds/blur_bg_2.jpg);
-     background-repeat: repeat-y;
-     background-position: center center;
+/*   background-repeat: repeat-y;
+     background-position: center center;        */
      background-size: cover;
  }
  
