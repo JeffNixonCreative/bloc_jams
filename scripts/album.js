@@ -1,3 +1,25 @@
+
+
+// #1: alocate values to a new, accessible object
+ var albumMilkman = {
+                                                                        // album-view-details...
+     name: 'Spilled Milk',                                                  // ...TITLE element "The Colors"
+     artist: 'Milkman',                                                     // ...ARTIST element "Pablo Picasso"
+     label: 'Hip-Hop',                                                      // ...RELEASE element Cubism
+     year: '2007',                                                          // ...YEAR element 1881 ????? How do these coe together???
+     albumArtUrl: 'assets/images/album_covers/01.png',                  // album-cover-art element (picture)
+//     document.getElementsByTagName('img').addEventListener('click',setCurrentAlbum(albumPicasso));
+                                                                        // album-view-song-list
+     songs: [                                                               // sub-object (array)
+         { name: 'The Names Milkman', length: '2:34' },                         // row 1
+         { name: 'Detox', length: '3:10' },                                     // row 2
+         { name: 'Concrete Kry.', length: '3:10' },                             // row 3
+         { name: 'The Origin', length: '2:48'},                                 // row 4
+         { name: 'Doublefaced Tripple Beam', length: '3:30'}                    // row 5
+     ]
+ };
+
+
 // #1: alocate values to a new, accessible object
  var albumPicasso = {
                                                                         // album-view-details...
@@ -6,7 +28,8 @@
      label: 'Cubism',                                                       // ...RELEASE element Cubism
      year: '1881',                                                          // ...YEAR element 1881 ????? How do these coe together???
      albumArtUrl: 'assets/images/album_covers/01.png',                  // album-cover-art element (picture)
-                                                                        // album-view-song-list
+     
+     // album-view-song-list
      songs: [                                                               // sub-object (array)
          { name: 'Blue', length: '4:26' },                                      // row 1
          { name: 'Green', length: '3:14' },                                     // row 2
@@ -15,7 +38,8 @@
          { name: 'Magenta', length: '2:15'}                                     // row 5
      ]
  };
- 
+
+
 // #1: alocate values to a new, accessible object
  var albumMarconi = {
                                                                         // album-view-details...
@@ -34,8 +58,9 @@
      ]
  };
 
-// #2: alocate table element to a new, accessible variables
-var createSongRow = function(songNumber, songName, songLength) {          // pass arguments from setCurrentAlbum function
+
+// #2: create a template and assign it to the TABLE element
+var createSongRow = function (songNumber, songName, songLength) {          // pass arguments from setCurrentAlbum function
      
      var template =                                                         // new variable determining table format
         '<tr class="album-view-song-item">'                                     // calling the TABLE view
@@ -46,37 +71,41 @@ var createSongRow = function(songNumber, songName, songLength) {          // pas
       ;                                                                     // end of object
  
      return template;                                                       // make new object accessible
- 
- };
- 
- var setCurrentAlbum = function(album) {                                    // pass argument albumPicasso from event handler (onload)
+};
+
+ var setCurrentAlbum = function(album) {                                    // pass argument albumMilkman from event handler (onload)
  
 // #4: create variable with node elements to pass the values to
      var albumTitle = document.getElementsByClassName('album-view-title')[0];                 // new variable with value of node element
+     albumTitle.firstChild.nodeValue = album.name;                                // albumTitle as value arg.property (name)
+    
      var albumArtist = document.getElementsByClassName('album-view-artist')[0];               // new variable with value of node element
+     albumArtist.firstChild.nodeValue = album.artist;                             // albumArtist as value arg.property (artist)
+    
      var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];    // new variable with value of node element
-     var albumImage = document.getElementsByClassName('album-cover-art')[0];                  // new variable with value of node element
-     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];          // new variable with value of node element
- 
-// #5: set the values of the new variable as the first child of each table node (column) as the arguements individual key
-     albumTitle.firstChild.nodeValue = album.name;                                // albumTitle as firstChild arg.name (key)
-     albumArtist.firstChild.nodeValue = album.artist;                             // albumArtist element as firstChild arg.name(key)
-     albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;      // albumReleaseInfo as firstChild value of arg.year (key)
-     albumImage.setAttribute('src', album.albumArtUrl);                           // albumImage attribute as image src
- 
-// #6: clear the table to be sure it is empty before passing in values to each node
-     albumSongList.innerHTML = '';
- 
-// #7: take in the arguments "song" key (in this case its an object) and loop it, passsing the values to new variable (TABLE element) 
-     for (i = 0; i < album.songs.length; i++) {                              // separate temblate argument object index/element
-         albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].name, album.songs[i].length); // pass index/elements to table w/#
-     }
- 
- };
+     albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;      // albumReleaseInfo as value arg.property (year)
 
-// #3: trigger the data to populate onload
- window.onload = function() {                                               // event handler (onload)
-   
-     setCurrentAlbum(albumPicasso);                                         // call setCurretAlbum function with argument
+     var albumImage = document.getElementsByClassName('album-cover-art')[0];
+     albumImage.setAttribute('src', album.albumArtUrl);                           // albumImage attribute as image src
+     albumImage.addEventListener('click', function () {
+         if (album = albumMilkman) {
+             setCurrentAlbum(albumPicasso);
+         } else if (album = albumPicasso) {
+             setCurrentAlbum(albumMarconi);
+         }
+     })
+         
+            
+     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];          // new variable with value of TABLE element
+     albumSongList.innerHTML = '';                                                              // clear the table
      
- };
+     for (i = 0; i < album.songs.length; i++) {                              // separate objects index/element and assign to TABLE
+         albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].name, album.songs[i].length); // add elements to table w/#
+     }
+};
+
+
+window.onload = function() {
+    setCurrentAlbum(albumMilkman);
+};
+
