@@ -1,4 +1,23 @@
 // #1: alocate values to a new, accessible object
+ var albumMilkman = {
+                                                                        // album-view-details...
+     name: 'Spilled Milk',                                                  // ...TITLE element "The Colors"
+     artist: 'Milkman',                                                     // ...ARTIST element "Pablo Picasso"
+     label: 'Hip-Hop',                                                      // ...RELEASE element Cubism
+     year: '2007',                                                          // ...YEAR element 1881 ????? How do these coe together???
+     albumArtUrl: 'assets/images/album_covers/01.png',                  // album-cover-art element (picture)
+//     document.getElementsByTagName('img').addEventListener('click',setCurrentAlbum(albumPicasso));
+                                                                        // album-view-song-list
+     songs: [                                                               // sub-object (array)
+         { name: 'The Names Milkman', length: '2:34' },                         // row 1
+         { name: 'Detox', length: '3:10' },                                     // row 2
+         { name: 'Concrete Kry.', length: '3:10' },                             // row 3
+         { name: 'The Origin', length: '2:48'},                                 // row 4
+         { name: 'Doublefaced Tripple Beam', length: '3:30'}                    // row 5
+     ]
+ };
+
+// #1: alocate values to a new, accessible object
  var albumPicasso = {
                                                                         // album-view-details...
      name: 'The Colors',                                                    // ...TITLE element "The Colors"
@@ -80,3 +99,15 @@ var createSongRow = function(songNumber, songName, songLength) {          // pas
      setCurrentAlbum(albumPicasso);                                         // call setCurretAlbum function with argument
      
  };
+
+
+//Click to toggle through all albums
+document.getElementsByClassName('album-cover-art')[0].addEventListener("click", changeAlbum);
+
+var albumArray = [albumPicasso, albumMarconi, albumMilkman]
+var albumIndex = 1;
+function changeAlbum() {
+    console.log(albumIndex % albumArray.length);
+        setCurrentAlbum(albumArray[albumIndex % albumArray.length]);
+        albumIndex++; 
+};
