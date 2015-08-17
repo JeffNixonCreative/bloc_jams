@@ -39,7 +39,7 @@ var createSongRow = function(songNumber, songName, songLength) {          // pas
      
      var template =                                                         // new variable determining table format
         '<tr class="album-view-song-item">'                                     // calling the TABLE view
-      + '  <td class="song-item-number">' + songNumber + '</td>'                    // assigning argOne as the first column
+      + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'                    // assigning argOne as the first column
       + '  <td class="song-item-title">' + songName + '</td>'                       // assigning argTwo as the second column
       + '  <td class="song-item-duration">' + songLength + '</td>'                  // assigning argThree as the second column
       + '</tr>'                                                                 // enging the TABLE view
@@ -71,12 +71,33 @@ var createSongRow = function(songNumber, songName, songLength) {          // pas
      for (i = 0; i < album.songs.length; i++) {                              // separate temblate argument object index/element
          albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].name, album.songs[i].length); // pass index/elements to table w/#
      }
+};
+
+// Elements we'll be adding listeners to
+var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
+var songRows = document.getElementsByClassName('album-view-song-item');
  
- };
+ // Album button templates
+var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
 
 // #3: trigger the data to populate onload
- window.onload = function() {                                               // event handler (onload)
-   
-     setCurrentAlbum(albumPicasso);                                         // call setCurretAlbum function with argument
-     
+
+ window.onload = function() {                                               
+     // call setCurretAlbum function with argument   
+     setCurrentAlbum(albumPicasso);                                         
+     songListContainer.addEventListener('mouseover', function(event) {
+
+         // Only target individual song rows during event delegation
+         if (event.target.parentElement.className === 'album-view-song-item') {
+             // Change the content from the number to the play button's HTML
+             event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
+         }
+         for (i = 0; i < songRows.length; i++) {
+         songRows[i].addEventListener('mouseleave', function(event) {
+             // Selects first child element, which is the song-item-number element
+             this.children[0].innerHTML = this.children[0].getAttribute('data-song-number');
+             // Revert the content back to the number
+         });
+     }
+     });
  };
