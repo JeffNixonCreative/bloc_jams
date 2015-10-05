@@ -4,6 +4,8 @@ body.album {
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+/*    200px of padding to accommodate the player bar.*/
+    padding-bottom: 200px;
 }
 
 .album-cover-art {

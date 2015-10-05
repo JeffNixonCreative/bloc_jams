@@ -1,0 +1,273 @@
+
+/* PLAYER BAR
+DEFINE POSITION
+SIZE AND STYLE */
+
+.player-bar {
+    position: fixed; /*    positioned relative to the viewport, it always stays in the same place even if the page is scrolled*/
+    bottom: 0; /*    0px above its nearest positioned ancestor:*/
+    left: 0; /*    0px to the right of its nearest positioned ancestor*/
+    right: 0; /*    0px to the left of its nearest positioned ancestor*/  
+    height: 150px; /*    150px tall*/    
+    background: rgba(255, 255, 255, 0.3); /*white background with 30% opacity    */
+    z-index: 100; /*100th stacked from furthest back element    */
+ }
+ 
+
+.player-bar a {
+     font-size: 1.1rem;
+     vertical-align: middle;
+}
+
+
+
+/* GIVE EACH ELEMENT WITH THE “A” TAG WTIHIN THE SECTION CLASS FOR THE PLAYER?????*/
+.player-bar a,
+
+/*HOVER STATE FOR EVERY ELEMENT WITH THE “A” CLASS WITHIN THE PLAYER-BAR SECTION*/
+.player-bar a:hover {
+    color: white; /*white, opaque    */
+    cursor: pointer;  /*change cursor to pointer   */
+    text-decoration: none;  /*no change to text style    */
+}
+
+
+
+
+
+
+/*CONTAINER
+WITHIN THE
+PLAYER BAR SECTION*/
+
+
+
+.player-bar .container {
+    display: table; /*let the element behave like a <table> element*/
+    padding: 0; /*no padding    */
+    width: 90%; /*only occupy 90% of the parent element (.player-bar) width    */
+    min-height: 100%; /*occupy 100% of the parent element (.player-bar) height    */
+}
+
+/*UNIFIED STYLES FOR EACH GROUP with .control-group associated*/
+.player-bar .control-group {
+    display: table-cell; /*let the element display as a <td> element    */
+    vertical-align: middle; /*place the element in the middle of its parent element    */
+}
+
+
+
+
+
+
+/*PLAY/PAUSE PREVIOUS/NEXT BUTTONS
+Left Container
+(main-controls class)*/
+
+
+
+.player-bar .main-controls {
+    width: 25%; /*25% the width of the parent container*/
+    text-align: left; 
+    padding-right: 1rem; /*10px??? right side padding relative to the root (html) element    */
+}
+
+
+    /*  PREVIOUS BUTTONS STYLES */
+.player-bar .main-controls .previous {
+     margin-right: 16.5%;
+ }
+    /* PLAY/PAUSE BUTTON STYLES*/
+ .player-bar .main-controls .play-pause {
+     margin-right: 15%;
+     font-size: 1.6rem;
+ }
+
+
+
+
+
+
+
+
+
+/*INFORMATION AND PROGRESS
+Center Container
+(.currently-playing class)*/
+
+
+
+.player-bar .currently-playing {
+    width: 50%; /*50% the width of the parent container    */
+    text-align: center; /*center align text    */
+    position: relative; /*position is relative to the position of the siblings    */
+}
+
+.player-bar .currently-playing .song-name, /*  Style this element */
+.player-bar .currently-playing .artist-name, /*  this element */
+.player-bar .currently-playing .artist-song-mobile { /*  and this element, with these styles */
+    text-align: center;
+    font-size: 0.75rem;
+    margin: 0;
+    position: absolute; /*positioned relative to its first ancestor element */
+    width: 100%;
+    font-weight: 300;
+}
+
+.player-bar .currently-playing .song-name, /*  Style this element */
+.player-bar .currently-playing .artist-song-mobile {  /*  and this element, with this style */
+    top: 1.1rem;  /* 110% from bottom of nearest ancestor????????  */
+}
+
+.player-bar .currently-playing .artist-name {
+    bottom: 1.1rem; /* 110% from bottom of its nearest positioned ancestor. For absolutely positioned elements, the top property sets the top edge of an element to a unit above/below the top edge of its nearest positioned ancestor*/
+}
+
+.player-bar .currently-playing .artist-song-mobile {
+    display: none; /* hide artist-song-element until it is called by the media query*/
+}
+
+.seek-control {
+     position: relative;
+     font-size: 0.8rem;
+ }
+ 
+ .seek-control .current-time {
+     position: absolute;
+     top: 0.5rem;
+ }
+ 
+ .seek-control .total-time {
+     position: absolute;
+     right: 0;
+     top: 0.5rem;
+ }
+ 
+ .seek-bar {
+     height: 0.25rem;
+     background: rgba(255, 255, 255, 0.3);
+     border-radius: 2px;
+     position: relative;
+     cursor: pointer;
+ }
+ 
+ .seek-bar .fill {
+     background: white;
+     width: 36%;
+     height: 0.25rem;
+     border-radius: 2px;
+ }
+ 
+ .seek-bar .thumb {
+     position: absolute;
+     height: 0.5rem;
+     width: 0.5rem;
+     background: white;
+     left: 36%;
+     top: 50%;
+     /* #1 */
+     margin-left: -0.25rem;
+     margin-top: -0.25rem;
+     border-radius: 50%;
+     cursor: pointer;
+     -webkit-transition: all 100ms ease-in-out;
+        -moz-transition: all 100ms ease-in-out;
+             transition: all 100ms ease-in-out;
+ }
+ 
+ .seek-bar:hover .thumb {
+     width: 1.1rem;
+     height: 1.1rem;
+     margin-top: -0.5rem;
+     margin-left: -0.5rem;
+ }
+
+
+
+
+
+
+
+
+/*VOLUME BAR
+Right Container
+(.volume class)*/
+
+
+
+
+.player-bar .volume {
+    width: 25%; /*25% the width of the parent container    */
+    text-align: right; /*Right aligned text    */
+}
+
+/*VOLUME ICON*/
+.player-bar .volume .icon {
+     font-size: 1.1rem;  /*    110% of what ????????????????? */
+     display: inline-block;  /*    Stack the element in the order of ancestry*/
+     vertical-align: middle;  /*    Align the icon with the middle of its container*/
+ }
+ 
+/*VOLUME LEVEL INDICATOR BAR */
+ .player-bar .volume .seek-bar {
+     display: inline-block; /*     Stack the element in the order of ancestry*/
+     width: 5.75rem;  /*  align the seek bar with the middle of the container*/
+     vertical-align: middle;  /*  align the seek bar with the middle of the container*/
+     color: white;
+ }
+
+
+
+
+
+
+
+/*MOBILE VIEW/MEDIA QUERY*/
+
+
+
+ @media (max-width: 40rem) { /*When the view finder reaches 400% of what ???????????????*/
+     .player-bar { /* the player-bar element (the entire container for the player)*/
+         padding: 1rem; /*         gets a padding of 100% of what ???????????????*/
+         background: rga(0,0,0,0.6); /* and the background color changes to black with 60% opacity*/
+     }
+     .player-bar .main-controls, /* and then the Play/Pause container (left)*/
+     .player-bar .currently-playing, /* as well as the information and progress (center)*/
+     .player-bar .volume { /* and volume bar (right), take the new styles of:*/
+         display: block; /* displays as a block element (similar to Bloc.io containers of code)*/
+         margin: 0 auto; /* with the margins of default 0 and allow the browser to calculate the margins (auto)*/
+         padding: 0; /* with 0 padding*/
+         width: 100%; /* and 100% the containers (play-bar) width*/
+         text-align: center; /*  and align the text in the center of its container (.volume, .currently-playing, .main-control)*/
+     }
+     
+     .player-bar .main-controls, /*  Also, change the Play/Pause (left)*/
+     .player-bar .volume { /* in addition to the volume bar (right), to the new styles of*/
+         min-height: 3.5rem; /* 350% of what ???????????????*/
+     }
+     
+     .player-bar .currently-playing { /*  Change the information and progress (center) to */
+/*         250% of what ???????????????*/
+         min-height: 2.5rem;
+     }
+
+     
+
+     .player-bar .artist-name, /*  Change the style of the .artists-name (in the information and progress container)*/
+     .player-bar .song-name { /* and song name, to this style:*/
+         display: none; /* hide  */
+     }
+
+     .player-bar .artist-song-mobile { /*Then, make the .artist-song-mobile element (within the information and progress container)     */
+         display: block; /* appear, and appear as a block element (similar to that of Boc.io code blocks/examples)*/
+     }
+ }
+
+
+
+
+
+
+
+
+
